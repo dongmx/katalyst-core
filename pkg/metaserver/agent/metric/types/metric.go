@@ -64,6 +64,7 @@ type NotifiedResponse struct {
 }
 
 type MetricsReader interface {
+	GetCPUCodeName() (string, error)
 	// GetNodeMetric get metric of node.
 	GetNodeMetric(metricName string) (metric.MetricData, error)
 	// GetNumaMetric get metric of numa.

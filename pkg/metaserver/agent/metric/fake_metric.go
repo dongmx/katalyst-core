@@ -90,6 +90,10 @@ func (f *FakeMetricsFetcher) RegisterExternalMetric(fu func(store *metric.Metric
 	f.registeredMetric = append(f.registeredMetric, fu)
 }
 
+func (f *FakeMetricsFetcher) GetCPUCodeName() (string, error) {
+	return f.metricStore.GetCPUCodeName()
+}
+
 func (f *FakeMetricsFetcher) GetNodeMetric(metricName string) (metric.MetricData, error) {
 	return f.checkMetricDataExpire(f.metricStore.GetNodeMetric(metricName))
 }

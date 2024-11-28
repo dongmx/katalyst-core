@@ -93,6 +93,7 @@ type SystemComputeData struct {
 	GlobalCPU    CPU          `json:"global_cpu"`
 	ProcessStats ProcessStats `json:"process_stats"`
 	UpdateTime   int64        `json:"update_time"`
+	CPUCodeName  string       `json:"cpu_codename"`
 }
 
 type ProcessStats struct {

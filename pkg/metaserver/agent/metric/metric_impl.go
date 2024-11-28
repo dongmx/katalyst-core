@@ -304,7 +304,9 @@ func NewMetricsFetcher(baseConf *global.BaseConfiguration, metricConf *metaserve
 		intervals:       intervals,
 	}
 }
-
+func (f *MetricsFetcherImpl) GetCPUCodeName() (string, error) {
+	return f.metricStore.GetCPUCodeName()
+}
 func (f *MetricsFetcherImpl) GetNodeMetric(metricName string) (utilmetric.MetricData, error) {
 	return f.checkMetricDataExpire(f.metricStore.GetNodeMetric(metricName))
 }

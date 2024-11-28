@@ -50,7 +50,8 @@ type MalachiteClient struct {
 	urls             map[string]string
 	relativePathFunc *func(podUID, containerId string) (string, error)
 
-	fetcher pod.PodFetcher
+	fetcher     pod.PodFetcher
+	cpuCodeName string
 }
 
 func NewMalachiteClient(fetcher pod.PodFetcher) *MalachiteClient {
